@@ -65,7 +65,7 @@
                 background-color: #ccc;
                 color: black;
                 position: relative;
-                transition: transform 0.3s ease;
+                transition: transform 0.1s ease-out;
             }
         </style>
     </head> 
@@ -92,8 +92,8 @@
 
             function moveButton() {
                 let button = document.getElementById('noButton');
-                let maxX = 100;
-                let maxY = 50;
+                let maxX = 300;
+                let maxY = 200;
 
                 let x = Math.random() * maxX - maxX / 2;
                 let y = Math.random() * maxY - maxY / 2;
