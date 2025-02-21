@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>yay!</title>
+        <link rel="stylesheet" href="./yes_style.css">
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #ffccde;
+                text-align: center;
+                font-family: 'Comic Sans MS', cursive, sans-serif;
+            }
+
+            .container {
+                background: white;
+                padding: 30px;
+                border-radius: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                max-width: 500px;
+            }
+
+            .header_text {
+                color: #ff4081;
+                font-size: 28px;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+
+            .gif_container img {
+                width: 250px;
+                height: auto;
+                margin: 20px 0;
+            }
+
+            .btn {
+                font-size: 18px;
+                padding: 10px 20px;
+                margin-top: 20px;
+                border: none;
+                cursor: pointer;
+                border-radius: 8px;
+                background-color: #ff4081;
+                color: white;
+                transition: 0.3s;
+            }
+
+            .btn:hover {
+                background-color: #d81b60;
+            }
+        </style>
+    </head> 
+    <body>
+        <div class="container">
+            <div>
+                <h1 class="header_text">yay! i knew you'd say yes!</h1>
+            </div>
+            <div class="gif_container">
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjBzanNyNWQwc2UxOGtheWc2bnc2d2FycG9uMWRveXcxbHBwcG1ociZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/hY8zxeuFn4tjRw0SXf/giphy.gif" 
+                alt="Chibi Heart Animated Illustration">
+            </div>
+            <button class="btn" onclick="goBack()">go back</button>
+        </div>
+
+        <script>
+            function goBack() {
+                window.location.href = "index.html";
+            }
+        </script>
+    </body> 
+</html>
