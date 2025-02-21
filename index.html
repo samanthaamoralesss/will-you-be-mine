@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>will you be mine?</title>
+        <link rel="stylesheet" href="./styles.css">
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #ffccde;
+                text-align: center;
+                font-family: Arial, sans-serif;
+            }
+
+            .container {
+                position: relative;
+                background: white;
+                padding: 30px;
+                border-radius: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            }
+
+            .header_text {
+                color: #ff4081;
+                margin: 10px 0;
+            }
+
+            .gif_container img {
+                width: 250px;
+                height: auto;
+                margin: 20px 0;
+            }
+
+            /* New: Button container to limit No button movement */
+            .button-container {
+                position: relative;
+                width: 300px;
+                height: 100px;
+                margin: 20px auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .btn {
+                font-size: 18px;
+                padding: 10px 20px;
+                margin: 10px;
+                border: none;
+                cursor: pointer;
+                border-radius: 8px;
+                transition: 0.3s;
+            }
+
+            #yesButton {
+                background-color: #ff4081;
+                color: white;
+            }
+
+            #yesButton:hover {
+                background-color: #d81b60;
+            }
+
+            #noButton {
+                background-color: #ccc;
+                color: black;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    </head> 
+    <body>
+        <div class="container">
+            <div>
+                <h1 class="header_text">will you be mine</h1>
+                <h1 class="header_text">forever...?</h1>
+            </div>
+            <div class="gif_container">
+                <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXM3bzUydXh6d2N3bDY1cjdyNjl5Ym5zMHNkZWI2a21hanU0MXU0aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/euW6JDwrMn0BqyNC8t/giphy.gif" 
+                alt="Chibi Heart Animated Illustration">
+            </div>
+            <div class="button-container">
+                <button class="btn" id="yesButton" onclick="nextPage()">yes</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">no</button>
+            </div>
+        </div>
+
+        <script>
+            function nextPage() {
+                window.location.href = "yes.html";
+            }
+
+            function moveButton() {
+                let button = document.getElementById('noButton');
+                let container = document.querySelector('.button-container');
+                
+                let maxX = container.clientWidth - button.clientWidth;
+                let maxY = container.clientHeight - button.clientHeight;
+
+                let x = Math.random() * maxX;
+                let y = Math.random() * maxY;
+
+                button.style.left = `${x}px`;
+                button.style.top = `${y}px`;
+            }
+        </script>
+    </body> 
+</html>
