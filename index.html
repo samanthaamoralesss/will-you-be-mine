@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>will you be mine?</title>
+        <title>Will You Be Mine?</title>
         <link rel="stylesheet" href="./styles.css">
         <style>
             body {
@@ -35,21 +35,17 @@
                 margin: 20px 0;
             }
 
-            /* New: Button container to limit No button movement */
-            .button-container {
-                position: relative;
-                width: 300px;
-                height: 100px;
-                margin: 20px auto;
+            .buttons {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                gap: 20px;
+                position: relative;
             }
 
             .btn {
                 font-size: 18px;
                 padding: 10px 20px;
-                margin: 10px;
                 border: none;
                 cursor: pointer;
                 border-radius: 8px;
@@ -68,26 +64,24 @@
             #noButton {
                 background-color: #ccc;
                 color: black;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
+                position: relative;
+                transition: transform 0.3s ease;
             }
         </style>
     </head> 
     <body>
         <div class="container">
             <div>
-                <h1 class="header_text">will you be mine</h1>
+                <h1 class="header_text">Will you be mine</h1>
                 <h1 class="header_text">forever...?</h1>
             </div>
             <div class="gif_container">
                 <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXM3bzUydXh6d2N3bDY1cjdyNjl5Ym5zMHNkZWI2a21hanU0MXU0aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/euW6JDwrMn0BqyNC8t/giphy.gif" 
                 alt="Chibi Heart Animated Illustration">
             </div>
-            <div class="button-container">
-                <button class="btn" id="yesButton" onclick="nextPage()">yes</button>
-                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">no</button>
+            <div class="buttons">
+                <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
             </div>
         </div>
 
@@ -98,16 +92,13 @@
 
             function moveButton() {
                 let button = document.getElementById('noButton');
-                let container = document.querySelector('.button-container');
-                
-                let maxX = container.clientWidth - button.clientWidth;
-                let maxY = container.clientHeight - button.clientHeight;
+                let maxX = 100;
+                let maxY = 50;
 
-                let x = Math.random() * maxX;
-                let y = Math.random() * maxY;
+                let x = Math.random() * maxX - maxX / 2;
+                let y = Math.random() * maxY - maxY / 2;
 
-                button.style.left = `${x}px`;
-                button.style.top = `${y}px`;
+                button.style.transform = `translate(${x}px, ${y}px)`;
             }
         </script>
     </body> 
